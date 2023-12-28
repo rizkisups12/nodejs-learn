@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello World</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+      const { useState } = React; // Import the useState hook from React
+
+      function MyApp() {
+        return <h1>Hello, world! </h1>;
+      }
+
+      function App() {
+        const [count, setCount] = useState(0);
+
+        function minClick() {
+          if(count - 1 == -10){
+            setCount('done!');
+          }else if(count == 'done!'){
+            setCount(-9);
+          }else{
+            setCount(count - 1);
+          }
+        }
+
+        function plusClick() {
+          if(count + 1 == 10){
+            setCount('done!');
+          }else if(count == 'done!'){
+            setCount(9);
+          }else{
+            setCount(count + 1);
+          }
+        }
+
+        function resetClick() {
+          setCount(0)
+        }
+
+        return (
+          <>
+            <MyApp />
+            <button onClick={minClick}>-</button>({count})<button onClick={plusClick}>+</button>
+            <br/>
+            <button onClick={resetClick}>reset</button>
+          </>
+        );
+      }
+
+      // Use ReactDOM.render instead of createRoot
+      const container = document.getElementById('root');
+      ReactDOM.render(<App />, container);
+
+    </script>
+  </body>
+</html>

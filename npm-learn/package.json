@@ -1,0 +1,22 @@
+{
+  "name": "npm-learn",
+  "version": "1.0.0",
+  "description": "project for learn about npm/node",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "hello": "echo \"Hello World!\"",
+    "server": "node server.js"
+  },
+  "keywords": [
+    "npm"
+  ],
+  "author": "supz",
+  "license": "ISC",
+  "dependencies": {
+    "moment": "^2.30.1"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2"
+  }
+}
